@@ -173,10 +173,11 @@ function createSceneConfig():SceneConfig{
     return conf
 }
 
-export function initMyFirstScene(){
+export function initMyFirstScene():boolean{
     //DISABLED FOR NOW
     //REMOVE THIS ONE TO ACTIVATE THE BELOW CODE
-    //return; //<==== REMOVE THIS LINE TO ACTIVATE THE BELOW CODE
+    //if returns false, the below code is not ran and will load default scene
+    return false; //<==== REMOVE THIS LINE TO ACTIVATE THE BELOW CODE
  
     //IF FOLLOWING README PUT YOUR SCENE CONFIG HERE    
 
@@ -192,7 +193,7 @@ export function initMyFirstScene(){
     //turn off any current active scene
     if(REGISTRY.SCENE_MGR._activeScene){
         REGISTRY.SCENE_MGR._activeScene.destroy()
-    }
+    } 
 
     //create a new scene
     const myScene = new BaseScene(REGISTRY.SCENE_MGR.generateSceneId(),"myScene")
@@ -208,8 +209,9 @@ export function initMyFirstScene(){
     myScene.moveVehicleToDefaultSpawn()
 
     addAdditionalNonPhysicsEntities()
-
-
+   
+    //return true - tells the scene that myScene was loaded and not to load the default
+    return true
 }
 
 function addAdditionalNonPhysicsEntities() {
@@ -297,5 +299,4 @@ function addAdditionalNonPhysicsEntities() {
         })
     } 
     /////////////////////////////////// END
-
 }

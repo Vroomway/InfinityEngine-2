@@ -30,15 +30,14 @@ export function main(){
         setupSkateParkSFInst()
         setupSkateParkStomInst()
 
-        //REGISTRY.SCENE_MGR.skateParkScene.init()
         //END TODO move to subscene
         setupUi()
 
-        //start with race trace
-        REGISTRY.SCENE_MGR.goRaceTrack()
-
         //init my first scene
-        initMyFirstScene()
+        if (!initMyFirstScene()){
+            //start with race trace
+            REGISTRY.SCENE_MGR.goRaceTrack()
+        }
     })
     
 }
