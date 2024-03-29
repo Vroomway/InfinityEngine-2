@@ -27,7 +27,7 @@ export function main(){
         const registry = initRegistry()
         initSceneMgr()
         //START TODO move to subscene
-        setupSkateParkSFInst()
+        setupRaceTrackInst()
         setupSkateParkStomInst()
 
         //END TODO move to subscene
@@ -35,7 +35,7 @@ export function main(){
 
         //init my first scene
         if (!initMyFirstScene()){
-            //start with race trace
+            //start with race trace as default it no other scene
             REGISTRY.SCENE_MGR.goRaceTrack()
         }
     })
@@ -52,7 +52,7 @@ function setupSkateParkStomInst(){
 }
  
 
-function setupSkateParkSFInst(){
+function setupRaceTrackInst(){
     const raceTrackScene = new RaceTrackScene(REGISTRY.SCENE_MGR.generateSceneId(),"raceTrackScene")
     initRaceTrackSceneConf() 
     //set default
