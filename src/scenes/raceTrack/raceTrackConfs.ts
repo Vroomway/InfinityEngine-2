@@ -28,8 +28,8 @@ export function initRaceTrackSceneConf(){
             scale: Vector3.create(0.5,0.5,0.5)
           },
           mesh:{ 
-            //src: "models/skater.glb" ,
-            src: "models/car.glb" ,
+            src: "models/skater.glb" ,
+            //src: "models/car.glb" ,
             invisibleMeshesCollisionMask: ColliderLayer.CL_NONE,
             visibleMeshesCollisionMask: ColliderLayer.CL_NONE
           }
