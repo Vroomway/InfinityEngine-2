@@ -198,12 +198,13 @@ export function getTileSetIdx(tileset:TileSetConf):TilsetIdx{
 export function getGridDims(tileset:TileSetConf):TilesetGridDims
 {
   const METHOD_NAME = "getGridDims"
-  log(CLASSNAME,METHOD_NAME,"ENTRY","tileset",tileset)
+  //log(CLASSNAME,METHOD_NAME,"ENTRY","tileset",tileset)
 
   //if has cached value use that
   //FIXME this is hacky storagle location, find better way to encasulate this behind getGridDims
   //and ensure gets garbage collected to avoid a memory leak
   if(tileset._measurements){
+    //log(CLASSNAME,METHOD_NAME,"CACHED","tileset",tileset)
     return tileset._measurements
   }
   //debugger
