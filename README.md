@@ -4,7 +4,10 @@
 
 This scene is an example of using the Infinity Engine with Decentraland SDK7.
 
-It includes a pair of working example scenes, as well as full instructions for importing your own scenes.
+It includes a pair of working example scenes, as well as the blend files used to create them. There are also full instructions for importing your own scenes.
+
+You can see a demo of the scene at [ToDo - add link].
+
 
 Contents:
 --
@@ -41,7 +44,9 @@ npm install
 npm run start
 ```
 
-## Overview
+---
+
+# Overview
 
 Tools Used
 --
