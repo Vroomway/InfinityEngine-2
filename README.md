@@ -8,6 +8,7 @@ It includes a pair of working example scenes, as well as the blend files used to
 
 You can see a demo of the scene at [ToDo - add link].
 
+![Example scenes](/docs/example-scenes.png)
 
 Contents:
 --
