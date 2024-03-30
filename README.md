@@ -1,11 +1,13 @@
 # Infinity Engine SDK7 Template
 
+<img align="left" width="100" height="100" src="./assets/logo-128.png" style="margin-right: 0.5em;">
+
 This scene is an example of using the Infinity Engine with Decentraland SDK7.
 
-It includes a pair of working example scenes, as well as full insturctions for importing your own scenes.
-
+It includes a pair of working example scenes, as well as full instructions for importing your own scenes.
 
 Contents:
+--
 
 * [Try it out](#try-it-out)
 * [Overview](#overview)
@@ -49,7 +51,7 @@ Tools Used
 | Blender                 | Used to create models and run plugins described below <https://www.blender.org>
 | CannonJS                | Physic engine.  See docs here for more details <https://github.com/schteppe/cannon.js>
 | DCL Cannon Collider     | Blender Plugin. Reads meshes and generates cannon colliders with some physics. See docs here more more details: <https://github.com/stom66/blender-dcltk-cannon-colliders>
-| DCL Scene Slicer        | Blender Plugin. Slices a large scene into tiles to be rendered by infinity engine. See docs here for more details: <https://github.com/stom66/blender-dcltk-scene-slicer>
+| DCL Scene Slicer        | Blender Plugin. Slices a large scene into tiles to be rendered by Infinity Engine. See docs here for more details: <https://github.com/stom66/blender-dcltk-scene-slicer>
 | Skybox Image Generator  | Generates 360 degree skyboxes
 
 Terminology
@@ -71,14 +73,14 @@ Folder Structure
 | Folder 	                        | Desc
 | ---		                          | ---
 | `src/modules/avatar`            | Handles avatar swap logic
-| `src/modules/avatarTrap`        | Handles avatar trap. when infinity engine is active we must hold player in center of scene and move the world around the player
+| `src/modules/avatarTrap`        | Handles avatar trap. When Infinity Engine is active we must hold the player in center of scene and move the world around the player
 | `src/modules/cannon-colliders`  | Utilites for processing colliders from <https://github.com/stom66/blender-dcltk-cannon-colliders>
 | `src/modules/scene-slicer`      | Utilities for processing tilesets from  <https://github.com/stom66/blender-dcltk-scene-slicer>
-| `src/modules/skybox`            | Generates skybox
+| `src/modules/skybox`            | Generates skyboxes
 | `src/modules/spacePartition`    | Utility to generate spacial partitioning
-| `src/world`                     | Much of the infinity engine logic
 | `src/terrain`                   | Utils around terrain generation spacial grid + colliders
 | `src/ui`                        | 2D UI setup here
+| `src/world`                     | Much of the Infinity Engine logic
 
 
 
@@ -91,13 +93,16 @@ Pipeline Overview
 
 # Getting Started
 
+## Creating a Scene from Scratch
+
+See here for a in-depth guide to importing your own scene: [Creating a Scene from Scratch](docs/getting-started.md).
+
 ## Scene Configuration
 
 For a full example of a config file see [Infinity Engine Configuration](docs/infinity-engine-config.md).
 See [src/sceneConfigType.ts](src/sceneConfigType.ts) for configuration types.
 
 Some of the most common config options are covered below:
-
 
 * **Parcel size:** defines the size of the scene. Set these to match the `tile_dimensions` declared in `scene.json`
 
@@ -126,9 +131,6 @@ Some of the most common config options are covered below:
 	  "any", // if set to any will allow anyone to see
 	];
 	```
-## Creating a Scene from Scratch
-
-See here: [Creating a Scene from Scratch](docs/getting-started.md)
 
 ## Debugging
 
@@ -143,7 +145,7 @@ engine.defineComponent('moves-with-world-id', {
 	// id of entity
 	id: Schemas.String, 
 
-	// position in world, 0,0,0 as origin relative to Infinity engine scene origin, not scene 0,0,0
+	// position in world, 0,0,0 as origin relative to Infinity Engine scene origin, not scene 0,0,0
     position: Schemas.Vector3
 })
 
