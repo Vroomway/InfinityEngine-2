@@ -184,8 +184,20 @@ export class WorldState {
             //from state!
             if(carTransform) carTransform.rotation = Quaternion.multiply(carTransform.rotation, Quaternion.fromEulerDegrees(0,400*dt,0) )
           } else{
-            //from state!
-             if(carTransform) carTransform.rotation = Quaternion.slerp( carTransform.rotation, Quaternion.lookRotation(worldMoveVehicle.physicsBody.velocity, VECTOR_UP ) , 0.6 ) 
+            //from state! 
+
+             if(
+                carTransform && 
+                //to stop car from face planting when tiny velocity near zero makes it think its moving down
+                //Y by it self is bad as on flat wont move
+                //this is a workaround, not perfect
+                //can we use epsilon?? Vector3.equalsWithEpsilon to detect close to zero?
+                (Math.abs(worldMoveVehicle.physicsBody.velocity.x) > .01 ||
+                Math.abs(worldMoveVehicle.physicsBody.velocity.y) > .01 ||
+                Math.abs(worldMoveVehicle.physicsBody.velocity.z) > .01)
+             ){ 
+              carTransform.rotation = Quaternion.slerp( carTransform.rotation, Quaternion.lookRotation(worldMoveVehicle.physicsBody.velocity, VECTOR_UP ) , 0.6 ) 
+             }
             //Transform.getMutable(avatarTrap).rotation = Quaternion.lookRotation(ball.body.velocity, Vector3.Up() ) 
           }
           //DeBUG VECTOR VIZ
