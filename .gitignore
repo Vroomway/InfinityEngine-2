@@ -9,4 +9,4 @@ yarn-error.log*
 server/lib
 
 assets/avatar/*render*
-
+*.blend[0-9]
