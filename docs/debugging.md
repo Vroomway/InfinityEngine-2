@@ -38,3 +38,8 @@ Do not forget the position of the world is not the same as your normal DCL scene
 ### From Debug UI
 
 <img src="./debug-positioning.png" width="400">
+
+
+## Problems with colliders
+
+If you are having problems with your exported colliders, see the [Debugging section of the plugin documentation](https://github.com/stom66/blender-dcltk-cannon-colliders?tab=readme-ov-file#debugging). There is a visualiser available to help check the exported colliders, as well as common problems and how to fix them.
