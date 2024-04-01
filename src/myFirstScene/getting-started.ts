@@ -5,7 +5,6 @@ import { CONFIG } from '../config'
 import { REGISTRY } from '../registry'
 import { SceneConfig } from '../sceneConfigType'
 import { BaseScene } from '../scenes/common/baseScene'
-import { SKATE_PARK_STOM_CONF_8_8_30 } from '../scenes/skateParkStom/skateParkSceneStomConfs'
 import { MovesWithWorld } from '../world/worldMoveComponent'
 import { SceneVector3Type, SpawnPoint } from '../modules/SceneMgmt/types'
 
@@ -30,7 +29,7 @@ import { SceneVector3Type, SpawnPoint } from '../modules/SceneMgmt/types'
 // https://github.com/stom66/blender-dcltk-cannon-colliders
 //
 // CORRECT THE PATH TO MATCH WHERE YOU EXPORTED THE COLLIDER JSON
-import colliderJSON from '../../models/stom-skatepark-8x8x30/colliders.json'
+import colliderJSON from '../../assets/demo/stom-skatepark-8x8x30/colliders.json'
 
 // ██╗███╗   ███╗██████╗  ██████╗ ██████╗ ████████╗    ███████╗██╗     ██╗ ██████╗███████╗██████╗ 
 // ██║████╗ ████║██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝    ██╔════╝██║     ██║██╔════╝██╔════╝██╔══██╗
@@ -43,7 +42,7 @@ import colliderJSON from '../../models/stom-skatepark-8x8x30/colliders.json'
 // https://github.com/stom66/blender-dcltk-scene-slicer
 //
 // CORRECT THE PATH TO MATCH WHERE YOU EXPORTED THE TILESET
-import tilesetJSON from '../../models/stom-skatepark-8x8x30/tileset.json'
+import tilesetJSON from '../../assets/demo/stom-skatepark-8x8x30/tileset.json'
 
 
 
@@ -84,7 +83,7 @@ function createSceneConfig():SceneConfig{
               scale: Vector3.create(0.5,0.5,0.5)
             },
             mesh: { 
-              src: "models/skater.glb" , // <<=== define what your avatar swap looks like              
+              src: "assets/demo/skater.glb" , // <<=== define what your avatar swap looks like              
               invisibleMeshesCollisionMask: ColliderLayer.CL_NONE,
               visibleMeshesCollisionMask: ColliderLayer.CL_NONE
             }
@@ -137,7 +136,7 @@ function createSceneConfig():SceneConfig{
         grid: {
           tileSetConf: {
             data: tilesetJSON as any, // tilesetJSON for generated files from scene-slicer
-            modelFolder: "models/stom-skatepark-8x8x30/", // MUST MATCH FOLDER for generated files from scene-slicer
+            modelFolder: "assets/demo/stom-skatepark-8x8x30/", // MUST MATCH FOLDER for generated files from scene-slicer
             flipYandZ: false,
             tilesetOffset: Vector3.Zero()
           },

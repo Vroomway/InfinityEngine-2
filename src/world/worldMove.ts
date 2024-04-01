@@ -2,7 +2,7 @@ import { Transform, engine } from "@dcl/sdk/ecs";
 import { Vector3 } from "@dcl/sdk/math";
 import CANNON from "cannon";
 import { log } from "../back-ports/backPorts";
-import { debugSpherePool } from "../debugSpherePool";
+import { DebugSpherePool } from "./debugSpherePool";
 import { BaseAvatar } from "../modules/avatar/avatarSwap";
 import { REGISTRY } from "../registry";
 import { SceneConfig } from "../sceneConfigType";
@@ -53,7 +53,7 @@ export function initWorldMove(sceneConf:SceneConfig){
   const world = REGISTRY.physics.world
 
   //debug markers
-  let debugMarkers = new debugSpherePool()
+  let debugMarkers = new DebugSpherePool()
 
   /*let terrainColliderShape = new CANNON.Trimesh(MeshVertices, MeshIndices)
   const terrainBody = new CANNON.Body({

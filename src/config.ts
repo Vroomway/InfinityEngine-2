@@ -72,7 +72,7 @@ export class Config {
   /** defaults for how avatar trap is */
   AVATAR_TRAP_DEFAULTS:InitAvatarTrap = {
     model:{
-      src: "models/avatar_trap.glb",
+      src: "assets/avatar_trap.glb",
       invisibleMeshesCollisionMask: ColliderLayer.CL_PHYSICS
     },
     offset: Vector3.create(0,-0.5,0)
@@ -88,8 +88,7 @@ export class Config {
         scale: Vector3.create(0.5,0.5,0.5)
       },
       mesh:{ 
-        //src: "models/skater.glb" ,
-        src: "models/car.glb" ,
+        src: "assets/demo/skater.glb" ,
         invisibleMeshesCollisionMask: ColliderLayer.CL_NONE,
         visibleMeshesCollisionMask: ColliderLayer.CL_NONE
       }
@@ -105,7 +104,7 @@ export class Config {
         scale: Vector3.create(0.5,0.5,0.5)
       },
       mesh:{ 
-        src: "models/skater.glb" ,
+        src: "assets/demo/car.glb" ,
         invisibleMeshesCollisionMask: ColliderLayer.CL_NONE,
         visibleMeshesCollisionMask: ColliderLayer.CL_NONE
       }

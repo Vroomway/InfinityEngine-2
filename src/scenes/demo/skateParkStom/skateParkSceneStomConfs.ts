@@ -1,10 +1,10 @@
 import { Vector3 } from "@dcl/sdk/math";
-import colliderJSON from '../../../models/stom-skatepark-8x8x30/colliders.json';
-import tilesetJSON_8x8_30 from '../../../models/stom-skatepark-8x8x30/tileset.json';
-import { CONFIG } from "../../config";
-import { SceneConfig } from "../../sceneConfigType";
+import colliderJSON from '../../../../assets/demo/stom-skatepark-8x8x30/colliders.json';
+import tilesetJSON_8x8_30 from '../../../../assets/demo/stom-skatepark-8x8x30/tileset.json';
+import { CONFIG } from "../../../config";
+import { SceneConfig } from "../../../sceneConfigType";
 import { ColliderLayer } from "@dcl/sdk/ecs";
-import { SceneVector3Type, SpawnPoint } from "../../modules/SceneMgmt/types";
+import { SceneVector3Type, SpawnPoint } from "../../../modules/SceneMgmt/types";
 
 export let SKATE_PARK_STOM_CONF_8_8_30:SceneConfig
 
@@ -28,8 +28,8 @@ export function initSkateParkStomConfs(){
             scale: Vector3.create(0.5,0.5,0.5)
           },
           mesh:{ 
-            //src: "models/skater.glb" ,
-            src: "models/car.glb" ,
+            src: "assets/demo/skater.glb" ,
+            //src: "assets/demo/car.glb" ,
             invisibleMeshesCollisionMask: ColliderLayer.CL_NONE,
             visibleMeshesCollisionMask: ColliderLayer.CL_NONE
           }
@@ -55,7 +55,7 @@ export function initSkateParkStomConfs(){
         tileSetConf: {
           //FIXME this is a hack to get the tileset to work had to cast as any
           data: tilesetJSON_8x8_30 as any,
-          modelFolder: "models/stom-skatepark-8x8x30/",
+          modelFolder: "assets/demo/stom-skatepark-8x8x30/",
           flipYandZ: false,
           tilesetOffset: tilesetOffset
         },

@@ -21,7 +21,7 @@ let lastArgs:InitAvatarTrap
 
 const DEFAULT_ARGS: InitAvatarTrap = {
   model:{
-      src: "models/avatar_trap.glb",
+      src: "assets/avatar_trap.glb",
       invisibleMeshesCollisionMask: ColliderLayer.CL_PHYSICS
   },
   offset: Vector3.create(0,-0.5,0)

@@ -1,8 +1,8 @@
 import { Entity, GltfContainer, MeshRenderer, Transform, engine } from "@dcl/sdk/ecs";
 import { Quaternion, Vector3 } from "@dcl/sdk/math";
-import { MovesWithWorld } from "./world/worldMoveComponent";
+import { MovesWithWorld } from "../world/worldMoveComponent";
 
-export class debugSpherePool {
+export class DebugSpherePool {
     spheres:Entity[]
     MAX_POOL_SIZE:number = 1
 
@@ -16,7 +16,7 @@ export class debugSpherePool {
                 //position: Vector3.create(10,-3, 10),
                 scale: Vector3.create(8.25,8.25,8.25)
             })
-            GltfContainer.create(sphere, { src: "models/axis.glb"})
+            GltfContainer.create(sphere, { src: "assets/axis.glb"})
             MovesWithWorld.create(sphere)
 
             this.spheres.push(sphere)

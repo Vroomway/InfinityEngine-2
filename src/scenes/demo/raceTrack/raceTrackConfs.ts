@@ -1,10 +1,10 @@
 import { Vector3 } from "@dcl/sdk/math";
-import colliderJSON from '../../../models/vw-racetrack-8x8x32/colliders.json';
-import tilesetJSON_8x8_30 from '../../../models/vw-racetrack-8x8x32/tileset.json';
-import { CONFIG } from "../../config";
-import { SceneConfig } from "../../sceneConfigType";
+import colliderJSON from '../../../../assets/demo/vw-racetrack-8x8x32/colliders.json';
+import tilesetJSON_8x8_30 from '../../../../assets/demo/vw-racetrack-8x8x32/tileset.json';
+import { CONFIG } from "../../../config";
+import { SceneConfig } from "../../../sceneConfigType";
 import { ColliderLayer } from "@dcl/sdk/ecs";
-import { SceneVector3Type, SpawnPoint } from "../../modules/SceneMgmt/types";
+import { SceneVector3Type, SpawnPoint } from "../../../modules/SceneMgmt/types";
 
 export let RACE_TRACK_CONF_8_8_32:SceneConfig
 
@@ -28,8 +28,8 @@ export function initRaceTrackSceneConf(){
             scale: Vector3.create(0.5,0.5,0.5)
           },
           mesh:{ 
-            src: "models/skater.glb" ,
-            //src: "models/car.glb" ,
+            src: "assets/demo/skater.glb" ,
+            //src: "assets/demo/car.glb" ,
             invisibleMeshesCollisionMask: ColliderLayer.CL_NONE,
             visibleMeshesCollisionMask: ColliderLayer.CL_NONE
           }
@@ -54,7 +54,7 @@ export function initRaceTrackSceneConf(){
         tileSetConf: {
           //FIXME this is a hack to get the tileset to work had to cast as any
           data: tilesetJSON_8x8_30 as any,
-          modelFolder: "models/vw-racetrack-8x8x32/",
+          modelFolder: "assets/demo/vw-racetrack-8x8x32/",
           flipYandZ: false,
           tilesetOffset: tilesetOffset
         },

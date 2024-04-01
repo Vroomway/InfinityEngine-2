@@ -69,7 +69,7 @@ export class WorldState {
         scale: Vector3.create(1,1, 3)})
         if(CONFIG.SHOW_GAME_DEBUG_INFO){
           GltfContainer.create(this.debugEntity, {
-            src: "models/axis_forward.glb"
+            src: "assets/axis_forward.glb"
           })
         }
 

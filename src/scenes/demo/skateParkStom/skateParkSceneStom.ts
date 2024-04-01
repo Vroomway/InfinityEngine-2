@@ -1,6 +1,6 @@
-import { log } from "../../back-ports/backPorts";
-import { IBaseEntityWrapper } from "../../modules/SceneMgmt/subScene";
-import { BaseScene } from "../common/baseScene";
+import { log } from "../../../back-ports/backPorts";
+import { IBaseEntityWrapper } from "../../../modules/SceneMgmt/subScene";
+import { BaseScene } from "../../common/baseScene";
 
 const CLASSNAME = "SkateParkSceneStom"
 

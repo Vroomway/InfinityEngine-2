@@ -4,9 +4,7 @@ import { SceneVector3Type, SpawnPoint } from "../modules/SceneMgmt/types";
 import { log } from "../back-ports/backPorts";
 import { CONFIG } from "../config";
 import { REGISTRY } from "../registry";
-import { SkateParkSceneStom } from "./skateParkStom/skateParkSceneStom";
 import { BaseScene } from "./common/baseScene";
-import { RaceTrackScene as RaceTrackScene } from "./raceTrack/raceTrackScene";
 
 const CLASS_NAME = "MySceneManager"
 export class MySceneManager extends SceneManager {
@@ -21,8 +19,11 @@ export class MySceneManager extends SceneManager {
   } 
 
   _activeScene!:BaseScene
-  skateParkSceneStom!:SkateParkSceneStom
-  raceTrackScene!:RaceTrackScene
+  //ideally these point at concrete instance classes
+  //however to keep the demo simple for deleteing demo things
+  //will use common base class
+  skateParkSceneStom!:BaseScene
+  raceTrackScene!:BaseScene
   
   playerLocationBeforeRace:Vector3 = Vector3.Zero()
 
