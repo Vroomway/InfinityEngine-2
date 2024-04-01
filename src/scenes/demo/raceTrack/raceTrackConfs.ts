@@ -48,7 +48,7 @@ export function initRaceTrackSceneConf(){
         ...CONFIG.SKYBOX_DEFAULTS, //take defaults then override as needed
         //override as needed
         enabled: true,
-        materialFolder: "images/skybox/7"
+        materialFolder: "assets/images/skybox/7"
       },
       grid:{
         tileSetConf: {

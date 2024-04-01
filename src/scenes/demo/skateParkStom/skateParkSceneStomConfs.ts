@@ -49,7 +49,7 @@ export function initSkateParkStomConfs(){
         ...CONFIG.SKYBOX_DEFAULTS, //take defaults then override as needed
         //override as needed
         enabled: true,
-        materialFolder: "images/skybox/base"
+        materialFolder: "assets/images/skybox/base"
       },
       grid:{
         tileSetConf: {

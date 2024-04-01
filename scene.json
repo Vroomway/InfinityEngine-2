@@ -4,7 +4,7 @@
   "display": {
     "title": "Infinity Engine Demo",
     "description": "Infinity Engine Demo",
-    "navmapThumbnail": "images/scene-thumbnail.png",
+    "navmapThumbnail": "assets/images/scene-thumbnail.png",
     "favicon": "favicon_asset"
   },
   "owner": "",

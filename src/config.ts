@@ -115,7 +115,7 @@ export class Config {
   SKYBOX_DEFAULTS: SceneSkyboxConf = {
     enabled:true,
     radius: 16*(ParcelCountX/2),
-    materialFolder: "images/skybox/8"
+    materialFolder: "assets/images/skybox/8"
   }
 
 

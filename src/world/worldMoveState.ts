@@ -21,7 +21,7 @@ const VECTOR_ZERO = Vector3.Zero()
 const CLASSNAME = "worldMoveState.ts"
 const logInterval = new IntervalUtil(1000)
 const checkGridFrequency = new IntervalUtil(750)
-
+const VELOCITY_TOLERANCE = Vector3.create(0.01,0.01,0.01)
 //export type PlayerControl
 
 export class WorldState {
@@ -199,6 +199,10 @@ export class WorldState {
               carTransform.rotation = Quaternion.slerp( carTransform.rotation, Quaternion.lookRotation(worldMoveVehicle.physicsBody.velocity, VECTOR_UP ) , 0.6 ) 
              }
             //Transform.getMutable(avatarTrap).rotation = Quaternion.lookRotation(ball.body.velocity, Vector3.Up() ) 
+          }
+          if(logInterval.update(dt)){
+            log(CLASSNAME,"playerControlSystemFn","speed",worldVehicleState.speed,"gasActive",worldVehicleState.gasActive,"brakesActive",worldVehicleState.brakesActive,"spin",worldVehicleState.spin,"jump",worldVehicleState.jump
+              ,"physics.velocity",worldMoveVehicle.physicsBody.velocity)//,Vector3.equalsWithEpsilon())
           }
           //DeBUG VECTOR VIZ
           if(CONFIG.SHOW_GAME_DEBUG_INFO && camHorizontal){

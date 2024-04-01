@@ -124,7 +124,7 @@ function createSceneConfig():SceneConfig{
           ...CONFIG.SKYBOX_DEFAULTS, // '...' copies the value from defaults then override as needed
           // override as needed
           enabled: true,
-          materialFolder: "images/skybox/base"
+          materialFolder: "assets/images/skybox/base"
         },
 
         //  ██████╗ ██████╗ ██╗██████╗ 
