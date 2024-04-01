@@ -15,8 +15,8 @@
     "dcl-ui-toolkit": "^0.9.1"
   },
   "devDependencies": {
-    "@dcl/js-runtime": "7.4.7",
-    "@dcl/sdk": "^7.4.7"
+    "@dcl/js-runtime": "7.4.12",
+    "@dcl/sdk": "^7.4.12"
   },
   "engines": {
     "node": ">=16.0.0",
