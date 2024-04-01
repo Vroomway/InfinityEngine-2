@@ -46,17 +46,17 @@ const playerPosComp = () => (
     >
       <UiEntity
         uiTransform={{
-          width: '100%',
+          width: '100%', 
           height: 30,
           margin: '0px 0'
         }}
         uiBackground={{
           textureMode: 'center',
-          texture: {
-            src: 'assets/images/scene-thumbnail.png',
-          },
-        }}
-        uiText={{ value: 'Infinity Engine SDK7 Demo', fontSize: 18, color: Color4.Black() }}  
+          // texture: {
+          //   src: 'assets/logo-128.png',
+          // },
+        }}  
+        uiText={{ value: 'Infinity Engine SDK7 Demo', fontSize: 18, color: Color4.Black() }}   
       />
       <Label
         onMouseDown={() => {console.log('Player Position clicked !')}}
