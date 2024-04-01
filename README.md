@@ -20,6 +20,7 @@ Contents:
 	* [Folder structure](#folder-structure)
 	* [Pipeline overview](#pipeline-overview)
 * [Getting Started]()
+	* [Demo Files](#demo-files)
 	* [Scene configuration](#scene-configuration)
 	* [Making a scene from scratch](docs/getting-started.md)
 	* [Debugging](#debugging)
@@ -102,9 +103,9 @@ Pipeline Overview
 
 ## Demo files
 
-Here you will find files in here are specific for the demo of Race Track and Skate Park. 
-
 Anything under a folder named 'demo' is reasonably self contained is safe to delete assuming you remove all references to it.   These are for the demo only.  Deleteing these folders will not impact the functionality of the Ininity Engine.  If your `src/myFirstScene/getting-started.ts` or any other file references things in here models will stop showing up or code may complain about a now missing file.  Update references where needed.
+
+Files in here are specific for the demo of Race Track and Skate Park. 
 
 ```
 src/demo/*
