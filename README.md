@@ -27,6 +27,7 @@ Contents:
 	* [Components](#components)
 	* [Systems](#systems)
 
+
 ## Try it out
 
 **Previewing the scene**
@@ -184,10 +185,24 @@ engine.defineComponent('moves-with-world-id', {
 
 
 
+## For Better Results
+
+* Keep the number of tracked `MovesWithWorld` components to a minimum. Parent objects as a much as you can, and assign **just** the parent to `MovesWithWorld`. 
+
+### Grid size
+
+When exporting out of DCL Scene Slicer try to keep the verticle part of the tiles bigger.  This reduces the number of cubes the spacial partition system has to keep track of and helps performance.  For example if your entire scene is x:100m, y:20m, z:100m.  If you decide you want 8 meter tiles.  Slice the cubes to be 8x20x8.  To avoid creating extra verticle tiles.  If you are making a very very tall scene x:100m, y:100m, z:100m consider making the slices to be 8x20x8 to reduce the verticle cubes.
+
+The suggestions here mirror closesly the same as the slicers recomendations. [https://github.com/stom66/blender-dcltk-scene-slicer](https://github.com/stom66/blender-dcltk-scene-slicer)
+
+* Suggest using 1/4 parcel size or smaller for good results
+* Grid size must be less than 1/2 your total parcel size
+* Smaller grid sizes increase the number of checks per frame and reduces performance
+* Larger grid sizes will result in the tiles being unloaded closer to the player
+* Consider having a larger vertical axis
+
 ## Things to keep in mind
 
-* The more items the `MovesWithWorldSystem` has to move, the worse performance will be.
-* Keep the number of tracked `MovesWithWorld` components to a minimum. Parent objects as a much as you can, and assign **just** the parent to `MovesWithWorld`. 
 
 * If you assign a `Transform.scale` to a parent entity using `MovesWithWorld` it will affect the positions of the children.
 
@@ -195,5 +210,3 @@ engine.defineComponent('moves-with-world-id', {
 	* I do have ideas as to how these libraries could support alternate components.
 
 * `MovesWithWorld` not work with Tween, as Tween manipulates the `Transfrom.position` component, but the Infinity Engine uses Transform to perform its work too.
-
-
