@@ -99,6 +99,20 @@ Pipeline Overview
 
 # Getting Started
 
+
+## Demo files
+
+Here you will find files in here are specific for the demo of Race Track and Skate Park. 
+
+Anything under a folder named 'demo' is reasonably self contained is safe to delete assuming you remove all references to it.   These are for the demo only.  Deleteing these folders will not impact the functionality of the Ininity Engine.  If your `src/myFirstScene/getting-started.ts` or any other file references things in here models will stop showing up or code may complain about a now missing file.  Update references where needed.
+
+```
+src/demo/*
+src/scenes/demo/*
+assets/demo/*
+```
+
+
 ## Creating a Scene from Scratch
 
 See here for a in-depth guide to importing your own scene: [Creating a Scene from Scratch](docs/getting-started.md).
