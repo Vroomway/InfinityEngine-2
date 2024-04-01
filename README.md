@@ -1,6 +1,6 @@
 # Infinity Engine SDK7 Template
 
-<img align="left" width="100" height="100" src="./assets/logo-128.png" style="margin-right: 1em; /">
+<img align="left" width="100" height="100" src="./docs/logo-128.png" style="margin-right: 1em; /">
 
 This scene is an example of using the Infinity Engine with Decentraland SDK7.
 
