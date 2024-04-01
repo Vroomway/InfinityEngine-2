@@ -5,7 +5,7 @@ Here you will find files in here are specific for the demo of Race Track and Ska
 ```
 src/demo/*
 src/scenes/demo/*
-src/models/demo/*
+src/assets/models/demo/*
 ```
 
 It is safe to delete them and keep the spirite of the Infinity Engine intact.  
