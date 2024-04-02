@@ -19,7 +19,7 @@ export class SystemWrapper implements ISystemWrapper{
         this.state = new SystemState()
         this._fn = fn
         this._system = new SystemWrapperBasic(
-            {name:"keepPlayerCenteredSystem",priority:priority,fn:this.update.bind(this)}
+            {name:name,priority:priority,fn:this.update.bind(this)}
             ,this.state)
     }
     addToEngine() {
