@@ -13,10 +13,11 @@ import { destroyWorldMove, destroyWorldState, initWorld, initWorldMove, initWorl
 import { createWorldMoveVehicleContacts, initWorldMoveVehicle } from "../../world/worldMoveVehicle"
 import { movePlayerTo } from "~system/RestrictedActions"
 import { CONFIG } from "../../config"
+import { destroyPlayerControlSystem, initPlayerControlSystemSystem } from "../../world/worldPlayerControlSystem"
 
 const CLASSNAME = "BaseScene"
 
-export class BaseScene extends BaseSubScene{
+export class BaseScene extends BaseSubScene{ 
   skybox!:Skybox
   avatar!:PlayerAvatar
   sceneConfig!:SceneConfig
@@ -73,7 +74,7 @@ export class BaseScene extends BaseSubScene{
     initWorldMoveVehicle(sceneConfig) //create world move vehicle
     initWorldState(sceneConfig,this.avatar) //create world state
     initWorldMove(sceneConfig); //activate world move
-    
+    initPlayerControlSystemSystem(REGISTRY.worldState) //create player control system
     const terrainColliders = createTerrainColliders({colliderData:sceneConfig.physics.colliderData})
     createWorldMoveVehicleContacts(terrainColliders) //create world move vehicle contacts
 
@@ -126,7 +127,10 @@ export class BaseScene extends BaseSubScene{
 
     destroySpacePartition()
 
+    destroyPlayerControlSystem()
+
     destroyWorldState()
+
 
     //TODO destroy avatar better, hide modifier not removed
 

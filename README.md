@@ -181,6 +181,7 @@ engine.defineComponent('moves-with-world-id', {
 | ---		                        	| ---
 | `src/world/movesWithWorldSystem`  	| System that moves the world around the player.  The player is held in place via the Avatar Trap.
 | `src/world/worldSpacePartitionSystem` | System determines nearby entities to be loaded and remove far away entities.
+| `src/world/worldPlayerControlSystem` | System that controls player movement
 
 
 

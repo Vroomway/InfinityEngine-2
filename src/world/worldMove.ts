@@ -6,7 +6,6 @@ import { DebugSpherePool } from "./debugSpherePool";
 import { BaseAvatar } from "../modules/avatar/avatarSwap";
 import { REGISTRY } from "../registry";
 import { SceneConfig } from "../sceneConfigType";
-import { getGridDims, getTileSetIdx } from "../terrain/terrainGrid";
 import { SYSTEM_PRIORITES, SystemState, SystemWrapperBasic } from "../utils/systemsHelpers";
 import { destroyMovesWithWorldSystem, initMovesWithWorldSystem } from "./movesWithWorldSystem";
 import { WorldState } from "./worldMoveState";
