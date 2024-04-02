@@ -21,28 +21,17 @@ export class RegistryEntities {
   avatarTrap!: AvatarTrapEntity
   moveWithWorldGrid!: EntityWrapper
   fixedGrid!: EntityWrapper
-  /*
-  alternativeScene!: Entity;
-  secondaryAlternativeScene!: Entity;
-  rootScene!: Entity;*/
 } 
 export class RegistrySystems {
   worldStepSystem?: SystemWrapperBasic
   keepPlayerCenteredSystem?: SystemWrapperBasic
-  /*
-  alternativeScene!: Entity;
-  secondaryAlternativeScene!: Entity;
-  rootScene!: Entity;*/
 } 
 export class RegistryPhysics {
   world?: CANNON.World
   player?: WorldMoveVehicle
   //TODO REMOVE groundMaterial
   groundMaterial?: CANNON.Material
-  /*
-  alternativeScene!: Entity;
-  secondaryAlternativeScene!: Entity;
-  rootScene!: Entity;*/
+  
 } 
 
 export class Registry {

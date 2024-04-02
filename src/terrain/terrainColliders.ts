@@ -39,20 +39,6 @@ export function createTerrainColliders(
     const world = REGISTRY.physics.world!
     const colliderInsts = loadCollidersFromJSON(world, colliderConf,offset ? offset : Vector3.Zero())
     
-    /*for(const collider of colliderConf){
-      let colliderShape = new CANNON.Trimesh(collider.vertices, collider.indices)
-      const colliderBody = new CANNON.Body({
-        mass: 0, // mass == 0 makes the body static //why is the trick 0 mass???
-        position: new CANNON.Vec3(collider.position[0],collider.position[1],collider.position[2])
-      }) 
-      colliderBody.material = REGISTRY.physics.groundMaterial
-      colliderBody.addShape(colliderShape)
-
-      world.addBody(colliderBody)
-
-       
-    }*/
-    
     const result:ColliderCreateResult = {
       colliders: colliderInsts
     }

@@ -32,22 +32,6 @@ export function destroyTerrainGrid(){
 // terrain factory
 export function createTerrainGrid(args:GridCreateRequest) {
 
-  //draw grid
-  //CENTER_OFFSET accounts for how it gets shifted to be centered around scene center
-  
-  //((28*16)/16)/2 = 14 
-  //(((28*16)/(16))/2) * (16/16) = 14 
-  //create a world 2x bigger to handle all movement so divide by 2
-  //TODO need way maybe take bounding box to know grid size to make?
-  /*const GRID_WIDTH_X = ((CONFIG.sizeX/PARCEL_UNIT_METERS)/2) * (PARCEL_UNIT_METERS/CONFIG.SPACIAL_GRID_CELL_SIZE)
-  const GRID_WIDTH_Z = ((CONFIG.sizeZ/PARCEL_UNIT_METERS)/2) * (PARCEL_UNIT_METERS/CONFIG.SPACIAL_GRID_CELL_SIZE)
-  //TOO MANY ENTITIES EVEN FOR DEBUGGING SLOWS THINGS WAAY DOWN
-  //NEED OBJECT POOL TO POP THEM IN AND OUT SETTING NEW POS AND PARENT
-  const GRID_WIDTH_Y = 6
-  const GRID_CELL_SIZE = CONFIG.SPACIAL_GRID_CELL_SIZE
-  const CENTER_OFFSET = GRID_CELL_SIZE/2
-  const y = 0*/
-
   log("CONFIG",CONFIG)
  
 
@@ -113,15 +97,9 @@ export type GridDebugType={
 }
 type GridCreateRequest={
     id:string
-    //dimX:number,
-    //dimY:number,
-    //dimZ:number,
 
     position: Vector3
 
-    //cellSize:number,
-    //cellOffset:Vector3,
-    //cellDebugTextOffset:Vector3
     debug: GridDebugType
 
     moveWithWorld:boolean
@@ -275,10 +253,6 @@ function createGrid(
   //const flipYandZ = args.tileset.modelFolder
 
   //WITH LOWER LOAD TIMES, WHAT IF WE PRELOADED ALL THE FILES?
-  //const terrainTileSet = skatepark_tileset_8x8x16
-  //const terrainTileSetModelFolder = "models/tileset.skatepark.8x8x16/"
-  //const terrainTileSet = skatepark_tileset_16x16x16
-  //const terrainTileSetModelFolder = "models/tileset.skatepark.16x16x16/" 
   const terrainTileSet = args.tileset.data//skatepark_will_tileset_8x8x10
   const terrainTileSetModelFolder = args.tileset.modelFolder//"models/will-park-exact/" 
   

@@ -125,7 +125,6 @@ export class MySceneManager extends SceneManager {
   }
 }
 
-//export const SCENE_MGR = new RaceSceneManager();
 export function initSceneMgr(){
   REGISTRY.SCENE_MGR = MySceneManager.getInstance()
 }
