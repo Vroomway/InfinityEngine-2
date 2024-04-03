@@ -10,7 +10,7 @@ import { WorldMoveVehicle, WorldMoveVehicleState } from './world/worldMoveVehicl
 /** how skybox is configured in scene */
 export type SceneSkyboxConf={
     enabled:boolean
-    /**  */
+    /**  radius the skybox, how big the skybox is, defaults to scene radius*/
     radius: number
     /** folder to the slices of 360 images that form the skybox */
     materialFolder:string

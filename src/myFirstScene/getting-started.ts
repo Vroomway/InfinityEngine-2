@@ -65,6 +65,12 @@ function createSceneConfig():SceneConfig{
         // ╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝       ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝                                                                     
         avatarTrap: {
           ...CONFIG.AVATAR_TRAP_DEFAULTS, // '...' copies the value from defaults then override as needed
+          // override as needed
+          // model:{
+          //   src: "assets/avatar_trap.glb",
+          //   invisibleMeshesCollisionMask: ColliderLayer.CL_PHYSICS
+          // },
+          // offset: Vector3.create(0,-0.5,0)
         },
 
         //  █████╗ ██╗   ██╗ █████╗ ████████╗ █████╗ ██████╗ 
@@ -112,6 +118,18 @@ function createSceneConfig():SceneConfig{
         worldVehicle: {
             ...CONFIG.WORLD_VEHICLE_DEFAULTS, //'...' copies the value from defaults then override as needed
             //override as needed
+            // speed: 0,
+            // speedDecayEnabled: true,
+            // speedDecayFactor: 30*10,
+            // maxSpeed: 200,
+            // maxBackSpeed: -200 ,
+            // speedBackwardsFactor: 30*20,
+            // jumpImpulseForce: Vector3.create(0 ,25,0),
+
+            // mass: 5,
+            // shapeRadius: .5, //how big the sphere is
+            // linearDamping: 0.4,
+            // angularDamping: 0.4,
           },
 
         // ███████╗██╗  ██╗██╗   ██╗██████╗  ██████╗ ██╗  ██╗
@@ -124,6 +142,7 @@ function createSceneConfig():SceneConfig{
           ...CONFIG.SKYBOX_DEFAULTS, // '...' copies the value from defaults then override as needed
           // override as needed
           enabled: true,
+          //radius: 16*(ParcelCountX/2),
           materialFolder: "assets/images/skybox/base"
         },
 
@@ -201,6 +220,8 @@ export function initMyFirstScene():boolean{
     //init the scene, see BaseScene#initWithConfig does most of the heavy lifting
     myScene.init()
 
+
+    myScene.destroy()
     //register this scene as the active scene
     REGISTRY.SCENE_MGR._activeScene = myScene
 
