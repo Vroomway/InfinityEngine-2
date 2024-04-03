@@ -13,7 +13,6 @@ export function setupUi() {
   createDebugUIButtons()
 
   ReactEcsRenderer.setUiRenderer(uiComponent)
-  //ReactEcsRenderer.setUiRenderer(playerPosComp)
 }
 
 const uiComponent = () => [
@@ -84,7 +83,8 @@ function getPlayerPosition() {
   let gym=CONFIG.infinEngineCenter.y - ty
   let gzm=CONFIG.infinEngineCenter.z - tz
 
-  const pGridIdx = REGISTRY.spacePartioner.getGridIndex(x,y,z)
+  //uncomment if can use this value
+  //const pGridIdx = REGISTRY.spacePartioner.getGridIndex(x,y,z)
   const tGridIdx = REGISTRY.spacePartioner.getGridIndex(tx,ty,tz)
   const gGridIdx = REGISTRY.spacePartioner.getGridIndex(gxm,gym,gzm)
   //log("tGridIdx",tGridIdx)
@@ -103,9 +103,17 @@ function getPlayerPosition() {
     ieTrackingCount++
   }
 
+  let lastActiveGridCnt = -1
+  if(REGISTRY.worldState && REGISTRY.worldState.currentActiveCells){
+    lastActiveGridCnt = REGISTRY.worldState.currentActiveCells.size
+  }
+
+
+  let loadRadius = -1
   let gridModelFolder = "n/a"
   if(REGISTRY.SCENE_MGR._activeScene && REGISTRY.SCENE_MGR._activeScene.sceneConfig){
     gridModelFolder = REGISTRY.SCENE_MGR._activeScene.sceneConfig.grid.tileSetConf.modelFolder
+    loadRadius = REGISTRY.SCENE_MGR._activeScene.sceneConfig.grid.loadRadius
   }
 
   //TODO can be expensive, do few times a frame
@@ -116,15 +124,20 @@ function getPlayerPosition() {
     gridDimData = {} as any
   }
 
+  
+
   return `\nplayer.pos:{X: ${x.toFixed(2)}, Y: ${y.toFixed(2)}, z: ${z.toFixed(2)} }`
     + `\nterrain.pos:{X: ${tx.toFixed(2)}, Y: ${ty.toFixed(2)}, z: ${tz.toFixed(2)} }`
     + `\ngrid.pos(cell):{${gx.toFixed(1)},${gy.toFixed(1)},${gz.toFixed(1)}}`
+    //player position in grid
     + `\ngrid.pos(meters):{${gxm.toFixed(1)},${gym.toFixed(1)},${gzm.toFixed(1)}}`
     + `\ngrid.index: terrain:${tGridIdx}, player:${gGridIdx}`
     + `\nMoveWithWorlds.Tracking: ${ieTrackingCount}`
+    + `\ngrid.activeCells: ${lastActiveGridCnt} - grid.loadRadius(m): ${loadRadius}` 
     + `\ngrid.models:${gridModelFolder}`
     + `\ngrid.size(m):${JSON.stringify(gridDimData.gridSizeMeters)}`
     + `\ngrid.size(tiles)${JSON.stringify(gridDimData.gridSize)}`
-    + `\ngrid.cellRatio:${JSON.stringify(gridDimData.cellRatio)}` 
+    + `\ngrid.cell.size(m):${JSON.stringify(gridDimData.cellSizeMeters)}`  
+    + `\ngrid.cell.ratio:${JSON.stringify(gridDimData.cellRatio)}` 
     //+ `\nieCenter:{${ceX.toFixed(1)},${ceY.toFixed(1)},${ceZ.toFixed(1)}}`
 }
